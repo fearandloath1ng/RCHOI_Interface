@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации и авторизации</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1><i class="fas fa-user-circle"></i> Вход / Регистрация</h1>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="login">Вход</button>
+                <button class="tab-btn" data-tab="register">Регистрация</button>
+            </div>
+
+            <form id="loginForm" class="form active">
+                <div class="input-group">
+                    <label for="loginUsername"><i class="fas fa-user"></i> Имя пользователя</label>
+                    <input type="text" id="loginUsername" placeholder="Введите ваш логин">
+                    <div class="error-message" id="loginUsernameError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Пароль</label>
+                    <input type="password" id="loginPassword" placeholder="Введите ваш пароль">
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="loginSubmit">
+                    <span class="btn-text">Войти</span>
+                    <div class="loader hidden"><i class="fas fa-spinner fa-spin"></i></div>
+                </button>
+            </form>
+
+            <form id="registerForm" class="form">
+                <div class="input-group">
+                    <label for="regUsername"><i class="fas fa-user-plus"></i> Имя пользователя</label>
+                    <input type="text" id="regUsername" placeholder="Придумайте логин">
+                    <div class="error-message" id="regUsernameError"></div>
+                    <small>Только латинские буквы, цифры и _</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="regPassword"><i class="fas fa-lock"></i> Пароль</label>
+                    <input type="password" id="regPassword" placeholder="Не менее 6 символов">
+                    <div class="error-message" id="regPasswordError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="regConfirmPassword"><i class="fas fa-lock"></i> Подтверждение пароля</label>
+                    <input type="password" id="regConfirmPassword" placeholder="Повторите пароль">
+                    <div class="error-message" id="regConfirmPasswordError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="registerSubmit">
+                    <span class="btn-text">Зарегистрироваться</span>
+                    <div class="loader hidden"><i class="fas fa-spinner fa-spin"></i></div>
+                </button>
+            </form>
+
+            <div id="globalMessage" class="global-message hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
